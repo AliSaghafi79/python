@@ -1,0 +1,215 @@
+#                  Ali Saghafi                         #
+
+#                  ( python )                           #
+########################################################
+# det matrix (2 × 2) :
+#######################################################
+
+def det_Matrix2 (rows,cols):
+
+    mat = []
+
+    for i in range(rows):
+
+        temp = []
+
+        for j in range(cols):
+
+            temp.append(int(input("row ({}) , column ({})  :  ".format(i,j)  )))
+
+        mat.append(temp)
+
+    return mat
+
+
+
+matrix = det_Matrix2(2,2)
+
+print(" ")
+
+for row in matrix :
+    print(row)
+
+
+det_Matrix = (matrix[0][0] * matrix[1][1] ) - (matrix[0][1] * matrix[1][0])
+
+
+print(" ")
+
+
+print("det_Matrix = {}".format(det_Matrix))
+
+
+###################################################################################
+
+# Sample outPut:
+
+
+	row (0) , column (0)  :  1
+	row (0) , column (1)  :  2
+	row (1) , column (0)  :  3
+	row (1) , column (1)  :  4
+ 
+	[1, 2]
+	[3, 4]
+ 
+	det_Matrix = -2
+
+	Process finished with exit code 0
+
+
+########################################################
+# det matrix (3 × 3) :
+#######################################################
+
+def det_Matrix3(rows,cols):
+
+    mat = []
+
+    for i in range(rows):
+
+        temp = []
+
+        for j in range(cols):
+
+            temp.append(int(input("row ({}) , column ({})  :  ".format(i,j)  )))
+
+        mat.append(temp)
+
+    return mat
+
+
+
+matrix = det_Matrix3(3,3) 
+
+print(" ")
+
+
+print("Matrix (3 × 3) = ")
+
+for row in matrix :
+    print(row)
+
+det_Matrix = ((matrix[0][0] * matrix[1][1] * matrix[2][2]) + (matrix[0][1] * matrix[1][2] * matrix[2][0]) + (matrix[0][2] * matrix[1][0] * matrix[2][1])) - ((matrix[0][2] * matrix[1][1] * matrix[2][0]) + (matrix[0][0] * matrix[1][2] * matrix[2][1]) + (matrix[0][1] * matrix[1][0] * matrix[2][2]))
+
+print(" ")
+
+
+print("det Matrix (3 × 3) = {}".format(det_Matrix))
+
+
+
+###################################################################################################
+
+# Sample outPut : ( safhe 36 jozve , file 11 )
+
+
+	row (0) , column (0)  :  1
+	row (0) , column (1)  :  -1
+	row (0) , column (2)  :  3
+	row (1) , column (0)  :  1
+	row (1) , column (1)  :  0
+	row (1) , column (2)  :  -1
+	row (2) , column (0)  :  2
+	row (2) , column (1)  :  1
+	row (2) , column (2)  :  6
+ 
+	Matrix (3 × 3) = 
+	[1, -1, 3]
+	[1, 0, -1]
+	[2, 1, 6]
+ 
+	det Matrix (3 × 3) = 12
+
+	Process finished with exit code 0
+
+
+########################################################
+# det matrix (n × n) :
+#######################################################
+
+
+import numpy as np
+
+from math import *
+
+n = int(input('Enter the number of rows and columns  :  ' ))
+
+def det_Matrix(rows,cols):
+
+    mat = []
+
+    for i in range(rows):
+
+        temp = []
+
+        for j in range(cols):
+
+            temp.append(int(input("row ({}) , column ({})  :  ".format(i,j)  )))
+
+        mat.append(temp)
+
+    return mat
+
+matrix = det_Matrix(n,n)
+
+print(" ")
+
+print("Matrix ({}×{}) = ".format(n,n))
+
+for row in matrix :
+    print(row)
+
+x = np.linalg.det(matrix)
+
+print(" ")
+
+
+print("det Matrix ({}×{}) = {}".format(n,n,ceil(x)))
+
+
+
+#####################################################################################
+
+# Sample outPut :
+
+	Enter the number of rows and columns  :  4
+
+	row (0) , column (0)  :  1
+	row (0) , column (1)  :  2
+	row (0) , column (2)  :  3
+	row (0) , column (3)  :  4
+	row (1) , column (0)  :  5
+	row (1) , column (1)  :  6
+	row (1) , column (2)  :  7
+	row (1) , column (3)  :  8
+	row (2) , column (0)  :  9
+	row (2) , column (1)  :  12
+	row (2) , column (2)  :  35
+	row (2) , column (3)  :  6
+	row (3) , column (0)  :  24
+	row (3) , column (1)  :  6
+	row (3) , column (2)  :  2
+	row (3) , column (3)  :  4
+ 
+	Matrix (4×4) = 
+	[1, 2, 3, 4]
+	[5, 6, 7, 8]
+	[9, 12, 35, 6]
+	[24, 6, 2, 4]
+ 
+	det Matrix (4×4) = -3391
+
+	Process finished with exit code 0
+
+
+
+
+
+
+
+
+
+
+
+

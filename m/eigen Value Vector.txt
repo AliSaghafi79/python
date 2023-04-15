@@ -1,0 +1,75 @@
+﻿
+#                  Ali Saghafi                #
+
+#                  ( python )                 #
+########################################################
+# values and vectors Matrix (n × n) :
+#######################################################
+
+
+import numpy as np
+
+n = int(input('Enter the number of rows and columns  :  ' ))
+
+def V_Matrix(rows,cols):
+
+    mat = []
+
+    for i in range( rows ):
+
+        temp = []
+
+        for j in range( cols ):
+
+            temp.append(int(input("row ({}) , column ({})  :  ".format(i,j)  )))
+
+        mat.append(temp)
+
+    return mat
+
+
+matrix = V_Matrix(n,n)
+
+print(" ")
+
+print("Matrix ({}×{}) = ".format(n,n))
+
+for row in matrix :
+    print(row)
+
+values , vectors = np.linalg.eig( matrix )
+
+print(" ")
+
+print("Values = ")
+print(values)
+
+print(" ")
+
+print("Vectors = ")
+
+print(vectors)
+
+#####################################################################
+
+# Sample Output : ( safhe 56 jozve , file 23 )
+
+	Enter the number of rows and columns  :  2
+
+	row (0) , column (0)  :  1
+	row (0) , column (1)  :  2
+	row (1) , column (0)  :  3
+	row (1) , column (1)  :  2
+ 
+	Matrix (2×2) = 
+	[1, 2]
+	[3, 2]
+ 
+	Values = 
+	[-1.  4.]
+ 
+	Vectors = 
+	[[-0.70710678 -0.5547002 ]
+	 [ 0.70710678 -0.83205029]]
+
+	Process finished with exit code 0
