@@ -24,11 +24,4 @@ values , vectors = np.linalg.eig( matrix )
 
 print(" ")
 
-print("Values = ")
-print(values)
-
-print(" ")
-
-print("Vectors = ")
-
-print(vectors)
+print("New")
